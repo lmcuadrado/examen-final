@@ -14,15 +14,13 @@ v = np.array([3.,11.,1.3,37.,11.,6.,-23.,7.,7.])
 
 
 def covarianza(u,v):
-	A=np.zeros((len(u),len(u)))
-	B=np.zeros((len(u),len(u)))
-	ab=np.array([])
+	A=np.zeros((len(u)))
 	for i in range(1,len(u)):
 		for j in range(1,len(u)):	
 			a=u[i]-np.mean(u)
 			b=v[j]-np.mean(v)	
 			ab=a*b
-			suma[i]=(np.sum(ab))/(len(u)-1)
-	return suma
+			A[i]=(np.sum(ab))/(len(u)-1)
+	return A
 
 print covarianza(u,v)
